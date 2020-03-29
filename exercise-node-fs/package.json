@@ -1,0 +1,11 @@
+{
+  "name": "fs-excercise",
+  "version": "1.0.0",
+  "description": "JSON excercise with fs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Drashti K",
+  "license": "MIT"
+}
