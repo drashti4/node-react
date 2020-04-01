@@ -1,0 +1,17 @@
+GET /users
+GET /users/:id
+POST /users
+PUT /users (the unique identifier is contained in the payload)
+DELETE /users/:id
+------------------------
+GET /profile
+GET /profile/:id
+PUT /profile (the unique identifier is contained in the payload)
+--------------------------
+GET /product/:id
+---------------------------
+GET /cart
+POST /cart/:id
+PUT /cart/:id
+DELETE /cart/:id
+
