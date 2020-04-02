@@ -3,11 +3,12 @@ const router = express.Router();
 let node_fs = require('../../../exercise-node-fs/src/node-fs');
 let _fs = new node_fs();
 let app = express();
-let users = _fs.readFrom('../exercise-node-fs/JSONData.json');
+const FILENAME = '../exercise-node-fs/JSONData.json';
+let users = _fs.readFrom(FILENAME);
 
 //Get all users
 router.get('/',(req,res)=>{
-    res.send(_fs.readFrom('../exercise-node-fs/JSONData.json'));
+    res.send(users);
 });
 
 //Get single user
@@ -25,12 +26,14 @@ router.get('/:id',(req,res)=>{
 // Update user
 router.put('/:id',(req,res)=>{
     const found = users.some(user => user.id === parseInt(req.params.id));
-    if(found){
+    if(found!=undefined){
+
         const updUser = req.body;
         users.forEach(user => {
             if(user.id === parseInt(req.params.id)){
                 user.userName = updUser.userName? updUser.userName : user.userName;
                 user.age = updUser.age? updUser.age : user.age;
+                _fs.updateData(FILENAME, user);
                 res.json({msg: 'User updated', user});
             }
         });
