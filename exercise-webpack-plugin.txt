@@ -1,0 +1,11 @@
+
+1. Why not just write the HTML document manually?
+  It would be lengthy to remove and add particular div section on particular condition when It's direct HTML.
+
+2. Tell me the benefits over static pages
+	1. It's easy developing a component using React by using JSX
+	2. Easy sepration of concern in JSX than static pages
+
+3. Tell me the benefits over rendering the whole html for each requests
+
+    Rendering will only render those data which is changed by server rather than making request to refresh whole page
